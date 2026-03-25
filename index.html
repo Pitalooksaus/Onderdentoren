@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Café Onder Den Toren bij Katrien</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Onder Den Toren bij Katrien</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=EB+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=EB+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
-
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+```
 :root {
   --gold: #C9A84C;
   --gold-light: #d4b06a;
@@ -21,6 +21,8 @@
   --border: #3a3a35;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
   background: var(--bg-dark);
   color: var(--text-light);
@@ -29,10 +31,10 @@ body {
   line-height: 1.7;
 }
 
-/* NAV */
 nav {
   position: sticky;
   top: 0;
+  z-index: 100;
   background: var(--bg-dark);
   border-bottom: 1px solid var(--border);
   padding: 18px 24px;
@@ -42,21 +44,32 @@ nav a {
   color: var(--gold);
   text-decoration: none;
   font-size: 1.15rem;
+  letter-spacing: 0.02em;
 }
 
-/* HERO */
 .hero-img {
   width: 100%;
   height: 240px;
   background: linear-gradient(160deg, #2c2b24 0%, #1a1a14 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-img-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2e2b1e 0%, #1c1b15 60%, #111 100%);
+  opacity: 0.85;
 }
 
-/* SECTIONS */
 section {
   padding: 56px 28px;
 }
 
 .label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -66,6 +79,9 @@ section {
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-light);
   margin-bottom: 20px;
 }
 h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
@@ -74,15 +90,16 @@ h2 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
 h3 {
   font-family: 'EB Garamond', serif;
   color: var(--gold);
+  font-size: 1.25rem;
   margin: 12px 0 6px;
 }
 
 p {
   color: var(--text-muted);
+  font-size: 1rem;
   max-width: 600px;
 }
 
-/* BADGES */
 .badges {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,18 +108,25 @@ p {
 }
 .badge {
   border: 1px solid var(--border);
+  border-radius: 6px;
   padding: 14px 16px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* DIVIDER */
 .divider {
+  border: none;
   border-top: 1px solid var(--border);
   margin: 0 28px;
 }
 
-/* CARDS */
 .card-group {
   margin-top: 32px;
+  border-radius: 10px;
+  overflow: hidden;
   border: 1px solid var(--border);
 }
 .card {
@@ -112,108 +136,274 @@ p {
 .card + .card {
   border-top: 1px solid var(--border);
 }
+.card-emoji {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  display: block;
+}
 
-/* ACTIVITIES */
 .activity-list {
   margin-top: 32px;
 }
 .activity-item {
   display: flex;
+  align-items: flex-start;
   gap: 20px;
   padding: 24px 0;
   border-bottom: 1px solid var(--border);
 }
+.activity-item:first-child { border-top: 1px solid var(--border); }
+.activity-emoji {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+  margin-top: 2px;
+}
+.activity-text h3 {
+  margin: 0 0 4px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+.activity-text p {
+  font-size: 0.92rem;
+  max-width: none;
+}
 
-/* CONTACT */
 .contact-section {
   background: var(--bg-section);
   padding: 56px 28px;
 }
+.contact-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.contact-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.contact-info .contact-label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.contact-info p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: none;
+}
 
-/* FOOTER */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 40px 28px;
+.hours-label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  display: block;
+}
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.hours-table tr {
+  border-bottom: 1px solid var(--border);
+}
+.hours-table tr:first-child {
+  border-top: none;
+}
+.hours-table td {
+  padding: 14px 0;
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
-</style>
-</head>
+.hours-table td:last-child {
+  text-align: right;
+}
+.hours-table .closed {
+  color: #555;
+}
+.hours-table .day-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
+footer {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  padding: 40px 28px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+footer .footer-name {
+  font-family: 'EB Garamond', serif;
+  color: var(--gold);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  flex: 1;
+  min-width: 180px;
+}
+footer .footer-copy {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  flex: 1;
+  min-width: 180px;
+}
+```
+
+  </style>
+</head>
 <body>
 
-<nav>
-<a href="#">Café Onder Den Toren bij Katrien</a>
-</nav>
+  <nav>
+    <a href="#">Café Onder Den Toren bij Katrien</a>
+  </nav>
 
-<div class="hero-img"></div>
+  <div class="hero-img">
+    <div class="hero-img-inner"></div>
+  </div>
 
-<section>
-<p class="label">Welkom</p>
-<h1>Een vertrouwd gezicht in het dorp</h1>
-<p>Bij Café Onder Den Toren kan je altijd terecht voor een goed gesprek en een lekker drankje. Gezellig, toegankelijk en altijd een warm onthaal — voor iedereen.</p>
+  <section>
+    <p class="label">Welkom</p>
+    <h1>Een vertrouwd gezicht in het dorp</h1>
+    <p>Bij Café Onder Den Toren kan je altijd terecht voor een goed gesprek en een lekker drankje. Gezellig, toegankelijk en altijd een warm onthaal — voor iedereen.</p>
+    <div class="badges">
+      <div class="badge">📍 Centrum Buggenhout</div>
+      <div class="badge">☀️ Ruim terras</div>
+      <div class="badge">🛒 Wekelijkse markt</div>
+      <div class="badge">⭐ 4.3/5 op Google</div>
+    </div>
+  </section>
 
-<div class="badges">
-<div class="badge">📍 Centrum Buggenhout</div>
-<div class="badge">☀️ Ruim terras</div>
-<div class="badge">🛒 Wekelijkse markt</div>
-<div class="badge">⭐ 4.3/5 op Google</div>
+  <hr class="divider"/>
+
+  <section>
+    <p class="label">Buiten Zitten</p>
+    <h2>Twee terrassen</h2>
+    <p>Bij mooi weer kan je terecht op ons terras aan de voorkant of het ruimere terras achteraan.</p>
+    <div class="card-group">
+      <div class="card">
+        <span class="card-emoji">🏠</span>
+        <h3>Terras voor</h3>
+        <p>Gezellig aan de straat, met zicht op het dorp.</p>
+      </div>
+      <div class="card">
+        <span class="card-emoji">🌿</span>
+        <h3>Terras achteraan</h3>
+        <p>Rustiger en ruimer — perfect voor een lange namiddag.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <section>
+    <p class="label">Activiteiten</p>
+    <h2>Altijd iets te doen</h2>
+    <div class="activity-list">
+      <div class="activity-item">
+        <div class="activity-emoji">🛒</div>
+        <div class="activity-text">
+          <h3>Wekelijkse markt</h3>
+          <p>Elke donderdag recht voor de deur</p>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-emoji">🎉</div>
+        <div class="activity-text">
+          <h3>Regelmatige activiteiten</h3>
+          <p>Geregeld iets extra's — kom gerust langs voor meer info</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-section">
+    <p class="label">Kom Langs</p>
+    <h2>We zien u graag</h2>
+
+```
+<br/>
+
+<div class="contact-row">
+  <div class="contact-icon">📍</div>
+  <div class="contact-info">
+    <div class="contact-label">Adres</div>
+    <p>Kerkstraat 60<br/>9255 Buggenhout</p>
+  </div>
 </div>
-</section>
 
-<hr class="divider"/>
-
-<section>
-<p class="label">Buiten Zitten</p>
-<h2>Twee terrassen</h2>
-<p>Bij mooi weer kan je terecht op ons terras aan de voorkant of het ruimere terras achteraan.</p>
-
-<div class="card-group">
-<div class="card">
-<h3>Terras voor</h3>
-<p>Gezellig aan de straat, met zicht op het dorp.</p>
-</div>
-<div class="card">
-<h3>Terras achteraan</h3>
-<p>Rustiger en ruimer — perfect voor een lange namiddag.</p>
-</div>
-</div>
-</section>
-
-<hr class="divider"/>
-
-<section>
-<p class="label">Activiteiten</p>
-<h2>Altijd iets te doen</h2>
-
-<div class="activity-list">
-<div class="activity-item">
-<div>🛒</div>
-<div>
-<h3>Wekelijkse markt</h3>
-<p>Elke donderdag recht voor de deur</p>
-</div>
+<div class="contact-row">
+  <div class="contact-icon">♿</div>
+  <div class="contact-info">
+    <div class="contact-label">Bereikbaarheid</div>
+    <p>Centrum Buggenhout, dus makkelijk bereikbaar</p>
+  </div>
 </div>
 
-<div class="activity-item">
-<div>🎉</div>
-<div>
-<h3>Regelmatige activiteiten</h3>
-<p>Geregeld iets extra's — kom gerust langs voor meer info</p>
-</div>
-</div>
-</div>
-</section>
-
-<div class="contact-section">
-<p class="label">Kom langs</p>
-<h2>We zien u graag</h2>
-
-<p>Kerkstraat 60<br>9255 Buggenhout</p>
+<div class="contact-row">
+  <div class="contact-icon">⭐</div>
+  <div class="contact-info">
+    <div class="contact-label">Google Reviews</div>
+    <p>4.3 / 5 sterren</p>
+  </div>
 </div>
 
-<footer>
-© 2026 · Café Onder Den Toren bij Katrien
-</footer>
+<br/>
+<span class="hours-label">Openingsuren</span>
+<table class="hours-table">
+  <tr>
+    <td>Maandag</td>
+    <td>10:00 – 23:00</td>
+  </tr>
+  <tr>
+    <td>Dinsdag</td>
+    <td>10:00 – 23:00</td>
+  </tr>
+  <tr>
+    <td class="closed">Woensdag</td>
+    <td class="closed">Gesloten</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="day-with-icon">Donderdag <span>🛒</span></div>
+    </td>
+    <td>10:00 – 23:00</td>
+  </tr>
+  <tr>
+    <td>Vrijdag</td>
+    <td>10:00 – laat</td>
+  </tr>
+  <tr>
+    <td>Zaterdag</td>
+    <td>10:00 – laat</td>
+  </tr>
+  <tr>
+    <td>Zondag</td>
+    <td>10:00 – laat</td>
+  </tr>
+</table>
+```
+
+  </div>
+
+  <footer>
+    <div class="footer-name">Café Onder Den Toren<br/>bij Katrien</div>
+    <div class="footer-copy">© 2026 · Kerkstraat 60, Buggenhout</div>
+  </footer>
 
 </body>
 </html>
