@@ -24,60 +24,59 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg-dark);
-  color: var(--text-light);
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  background-color: #1a1a18;
+  color: #e8e0d0;
+  font-family: Georgia, 'Times New Roman', serif;
   line-height: 1.7;
 }
 
 .site-header {
-  background: #111110;
-  border-bottom: 1px solid var(--gold);
+  background-color: #111110;
+  border-bottom: 1px solid #C9A84C;
   padding: 24px 28px;
   text-align: center;
 }
 .site-title {
-  font-family: 'EB Garamond', serif;
-  color: var(--gold);
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  color: #C9A84C;
+  font-size: 1.5rem;
   letter-spacing: 0.06em;
-  line-height: 1.3;
 }
 
 section {
   padding: 56px 28px;
+  background-color: #1a1a18;
 }
 
 .label {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: #d4b06a;
   margin-bottom: 14px;
+  display: block;
+  font-family: Georgia, serif;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
+h1 {
+  font-size: 2.2rem;
   line-height: 1.15;
-  color: var(--text-light);
+  color: #e8e0d0;
   margin-bottom: 20px;
 }
-h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
-h2 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
-
+h2 {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  color: #e8e0d0;
+  margin-bottom: 20px;
+}
 h3 {
-  font-family: 'EB Garamond', serif;
-  color: var(--gold);
-  font-size: 1.25rem;
+  color: #C9A84C;
+  font-size: 1.2rem;
   margin: 12px 0 6px;
 }
 
 p {
-  color: var(--text-muted);
+  color: #9e9a8e;
   font-size: 1rem;
   max-width: 600px;
 }
@@ -89,19 +88,20 @@ p {
   margin-top: 32px;
 }
 .badge {
-  border: 1px solid var(--border);
+  border: 1px solid #3a3a35;
   border-radius: 6px;
   padding: 14px 16px;
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: #e8e0d0;
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: #222220;
 }
 
 .divider {
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #3a3a35;
   margin: 0 28px;
 }
 
@@ -109,14 +109,14 @@ p {
   margin-top: 32px;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid #3a3a35;
 }
 .card {
-  background: var(--bg-card);
+  background-color: #222220;
   padding: 32px 28px;
 }
 .card + .card {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #3a3a35;
 }
 .card-emoji {
   font-size: 2rem;
@@ -132,9 +132,11 @@ p {
   align-items: flex-start;
   gap: 20px;
   padding: 24px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #3a3a35;
 }
-.activity-item:first-child { border-top: 1px solid var(--border); }
+.activity-item:first-child {
+  border-top: 1px solid #3a3a35;
+}
 .activity-emoji {
   font-size: 1.8rem;
   flex-shrink: 0;
@@ -144,9 +146,7 @@ p {
 }
 .activity-text h3 {
   margin: 0 0 4px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  color: var(--text-light);
+  color: #e8e0d0;
   font-size: 1rem;
 }
 .activity-text p {
@@ -155,7 +155,7 @@ p {
 }
 
 .contact-section {
-  background: var(--bg-section);
+  background-color: #2a2a27;
   padding: 56px 28px;
 }
 .contact-row {
@@ -169,45 +169,37 @@ p {
   flex-shrink: 0;
   margin-top: 4px;
 }
-.contact-info .contact-label {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
+.contact-label {
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #C9A84C;
   margin-bottom: 6px;
+  display: block;
 }
 .contact-info p {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: #9e9a8e;
   max-width: none;
 }
 
-.hours-label {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 20px;
-  display: block;
+.hours-section {
+  padding: 56px 28px;
+  background-color: #1a1a18;
 }
+
 .hours-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 16px;
 }
 .hours-table tr {
-  border-bottom: 1px solid var(--border);
-}
-.hours-table tr:first-child {
-  border-top: none;
+  border-bottom: 1px solid #3a3a35;
 }
 .hours-table td {
   padding: 14px 0;
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: #9e9a8e;
 }
 .hours-table td:last-child {
   text-align: right;
@@ -215,34 +207,30 @@ p {
 .hours-table .closed {
   color: #555;
 }
-.hours-table .day-with-icon {
+.day-with-icon {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.hours-section {
-  padding: 56px 28px;
-  background: var(--bg-dark);
-}
-  background: var(--bg-dark);
-  border-top: 1px solid var(--border);
+footer {
+  background-color: #111110;
+  border-top: 1px solid #C9A84C;
   padding: 40px 28px;
   display: flex;
   gap: 32px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
-footer .footer-name {
-  font-family: 'EB Garamond', serif;
-  color: var(--gold);
+.footer-name {
+  color: #C9A84C;
   font-size: 1.1rem;
   line-height: 1.4;
   flex: 1;
   min-width: 180px;
 }
-footer .footer-copy {
-  color: var(--text-muted);
+.footer-copy {
+  color: #9e9a8e;
   font-size: 0.85rem;
   flex: 1;
   min-width: 180px;
@@ -258,31 +246,31 @@ footer .footer-copy {
   </header>
 
   <section>
-    <p class="label">Welkom</p>
+    <span class="label">Welkom</span>
     <h1>Een vertrouwd gezicht in het dorp</h1>
     <p>Bij Café Onder Den Toren kan je altijd terecht voor een goed gesprek en een lekker drankje. Gezellig, toegankelijk en altijd een warm onthaal — voor iedereen.</p>
     <div class="badges">
-      <div class="badge">📍 Centrum Buggenhout</div>
-      <div class="badge">☀️ Ruim terras</div>
-      <div class="badge">🛒 Wekelijkse markt</div>
-      <div class="badge">⭐ 4.3/5 op Google</div>
+      <div class="badge">&#128205; Centrum Buggenhout</div>
+      <div class="badge">&#9728; Ruim terras</div>
+      <div class="badge">&#128722; Wekelijkse markt</div>
+      <div class="badge">&#11088; 4.3/5 op Google</div>
     </div>
   </section>
 
   <hr class="divider"/>
 
   <section>
-    <p class="label">Buiten Zitten</p>
+    <span class="label">Buiten Zitten</span>
     <h2>Twee terrassen</h2>
     <p>Bij mooi weer kan je terecht op ons terras aan de voorkant of het ruimere terras achteraan.</p>
     <div class="card-group">
       <div class="card">
-        <span class="card-emoji">🏠</span>
+        <span class="card-emoji">&#127968;</span>
         <h3>Terras voor</h3>
         <p>Gezellig aan de straat, met zicht op het dorp.</p>
       </div>
       <div class="card">
-        <span class="card-emoji">🌿</span>
+        <span class="card-emoji">&#127807;</span>
         <h3>Terras achteraan</h3>
         <p>Rustiger en ruimer — perfect voor een lange namiddag.</p>
       </div>
@@ -292,18 +280,18 @@ footer .footer-copy {
   <hr class="divider"/>
 
   <section>
-    <p class="label">Activiteiten</p>
+    <span class="label">Activiteiten</span>
     <h2>Altijd iets te doen</h2>
     <div class="activity-list">
       <div class="activity-item">
-        <div class="activity-emoji">🛒</div>
+        <div class="activity-emoji">&#128722;</div>
         <div class="activity-text">
           <h3>Wekelijkse markt</h3>
           <p>Elke donderdag recht voor de deur</p>
         </div>
       </div>
       <div class="activity-item">
-        <div class="activity-emoji">🎉</div>
+        <div class="activity-emoji">&#127881;</div>
         <div class="activity-text">
           <h3>Regelmatige activiteiten</h3>
           <p>Geregeld iets extra's — kom gerust langs voor meer info</p>
@@ -313,114 +301,70 @@ footer .footer-copy {
   </section>
 
   <div class="contact-section">
-    <p class="label">Kom Langs</p>
+    <span class="label">Kom Langs</span>
     <h2>We zien u graag</h2>
-
-```
-<br/>
-
-<div class="contact-row">
-  <div class="contact-icon">📍</div>
-  <div class="contact-info">
-    <div class="contact-label">Adres</div>
-    <p>Kerkstraat 60<br/>9255 Buggenhout</p>
-  </div>
-</div>
-
-<div class="contact-row">
-  <div class="contact-icon">♿</div>
-  <div class="contact-info">
-    <div class="contact-label">Bereikbaarheid</div>
-    <p>Centrum Buggenhout, dus makkelijk bereikbaar</p>
-  </div>
-</div>
-
-<div class="contact-row">
-  <div class="contact-icon">⭐</div>
-  <div class="contact-info">
-    <div class="contact-label">Google Reviews</div>
-    <p>4.3 / 5 sterren</p>
-  </div>
-</div>
-
-<br/>
-<span class="hours-label">Openingsuren</span>
-<table class="hours-table">
-  <tr>
-    <td>Maandag</td>
-    <td>10:00 – 23:00</td>
-  </tr>
-  <tr>
-    <td>Dinsdag</td>
-    <td>10:00 – 23:00</td>
-  </tr>
-  <tr>
-    <td class="closed">Woensdag</td>
-    <td class="closed">Gesloten</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="day-with-icon">Donderdag <span>🛒</span></div>
-    </td>
-    <td>10:00 – 23:00</td>
-  </tr>
-  <tr>
-    <td>Vrijdag</td>
-    <td>10:00 – laat</td>
-  </tr>
-  <tr>
-    <td>Zaterdag</td>
-    <td>10:00 – laat</td>
-  </tr>
-  <tr>
-    <td>Zondag</td>
-    <td>10:00 – laat</td>
-  </tr>
-</table>
-```
-
+    <br/>
+    <div class="contact-row">
+      <div class="contact-icon">&#128205;</div>
+      <div class="contact-info">
+        <span class="contact-label">Adres</span>
+        <p>Kerkstraat 60<br/>9255 Buggenhout</p>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">&#9855;</div>
+      <div class="contact-info">
+        <span class="contact-label">Bereikbaarheid</span>
+        <p>Centrum Buggenhout, dus makkelijk bereikbaar</p>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">&#11088;</div>
+      <div class="contact-info">
+        <span class="contact-label">Google Reviews</span>
+        <p>4.3 / 5 sterren</p>
+      </div>
+    </div>
   </div>
 
   <section class="hours-section">
-    <p class="label">Openingsuren</p>
+    <span class="label">Openingsuren</span>
     <h2>Wanneer we open zijn</h2>
     <table class="hours-table">
       <tr>
         <td>Maandag</td>
-        <td>10:00 – 23:00</td>
+        <td>10:00 &ndash; 23:00</td>
       </tr>
       <tr>
         <td>Dinsdag</td>
-        <td>10:00 – 23:00</td>
+        <td>10:00 &ndash; 23:00</td>
       </tr>
       <tr>
         <td class="closed">Woensdag</td>
         <td class="closed">Gesloten</td>
       </tr>
       <tr>
-        <td>
-          <div class="day-with-icon">Donderdag <span>🛒</span></div>
-        </td>
-        <td>10:00 – 23:00</td>
+        <td><div class="day-with-icon">Donderdag &#128722;</div></td>
+        <td>10:00 &ndash; 23:00</td>
       </tr>
       <tr>
         <td>Vrijdag</td>
-        <td>10:00 – laat</td>
+        <td>10:00 &ndash; laat</td>
       </tr>
       <tr>
         <td>Zaterdag</td>
-        <td>10:00 – laat</td>
+        <td>10:00 &ndash; laat</td>
       </tr>
       <tr>
         <td>Zondag</td>
-        <td>10:00 – laat</td>
+        <td>10:00 &ndash; laat</td>
       </tr>
     </table>
   </section>
 
   <footer>
     <div class="footer-name">Café Onder Den Toren<br/>bij Katrien</div>
-    <div class="footer-copy">© 2026 · Kerkstraat 60, Buggenhout</div>
+    <div class="footer-copy">&copy; 2026 &middot; Kerkstraat 60, Buggenhout</div>
   </footer>
 
 </body>
